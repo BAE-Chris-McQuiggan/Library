@@ -13,7 +13,6 @@ public class Book extends Item implements Updateable, CheckOutable, CheckInable,
 
 	@Override
 	public void update(int ID) {
-		System.out.println("something");
 
 	}
 
@@ -25,8 +24,8 @@ public class Book extends Item implements Updateable, CheckOutable, CheckInable,
 		return incBookID;
 	}
 
-	public static void setIncBookID(int incBookID) {
-		Book.incBookID = incBookID;
+	public static void setIncBookID() {
+		Book.incBookID++;
 	}
 
 }

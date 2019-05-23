@@ -9,6 +9,7 @@ import Interfaces.Updateable;
 public class Newspaper extends Item implements Updateable, CheckOutable, CheckInable, Addable, Removeable {
 
 	private static int newspaperRefID = 444;
+	private static int incNewspaperID = 100;
 
 	@Override
 	public void update(int ID) {
@@ -18,6 +19,14 @@ public class Newspaper extends Item implements Updateable, CheckOutable, CheckIn
 
 	public static int getNewspaperRefID() {
 		return newspaperRefID;
+	}
+
+	public static int getIncNewspaperID() {
+		return incNewspaperID;
+	}
+
+	public static void setIncNewspaperID() {
+		Newspaper.incNewspaperID++;
 	}
 
 }
