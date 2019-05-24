@@ -1,31 +1,31 @@
 package Models;
 
-import Interfaces.CheckInable;
-import Interfaces.CheckOutable;
-import Interfaces.Removeable;
-import Interfaces.Updateable;
-import Interfaces.idGenerator;
+import Interfaces.idGeneratorable;
 
-public class Book extends Item implements Updateable, CheckOutable, CheckInable, Removeable, idGenerator {
+public class Book extends Item implements idGeneratorable {
 
 	private static int refBookID = 222;
 	private static int indiBookID = 100;
-	int iD;
 	String title;
 
 	public Book(String title) {
-		super();
-		this.iD = idGen();
+		setiD(idGen());
 		this.title = title;
 	}
 
-	public int getID() {
-		return iD;
-	}
+	// public Book(String title) {
+	// super();
+	// this.iD = idGen();
+	// this.title = title;
+	// }
 
-	public void setID() {
-		this.iD = idGen();
-	}
+	// public int getID() {
+	// return iD;
+	// }
+
+	// public void setID() {
+	// this.iD = idGen();
+	// }
 
 	public String getTitle() {
 		return title;
@@ -44,15 +44,15 @@ public class Book extends Item implements Updateable, CheckOutable, CheckInable,
 	}
 
 	@Override
-	public void update(int ID) {
-
-	}
-
-	@Override
 	public int idGen() {
 		indiBookID++;
 		return Integer.parseInt(Integer.toString(getItemRefID()) + Integer.toString(getRefBookID())
 				+ Integer.toString(getIndiBookID()));
+	}
+
+	@Override
+	public String toString() {
+		return "Book [ID= " + getiD() + ", Title= " + title + "]";
 	}
 
 }

@@ -1,6 +1,6 @@
 package Interfaces;
 
-public interface idGenerator {
+public interface idGeneratorable {
 
 	public int idGen();
 

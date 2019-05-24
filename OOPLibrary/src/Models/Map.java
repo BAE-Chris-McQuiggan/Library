@@ -1,32 +1,26 @@
 package Models;
 
-import Interfaces.CheckInable;
-import Interfaces.CheckOutable;
-import Interfaces.Removeable;
-import Interfaces.Updateable;
-import Interfaces.idGenerator;
+import Interfaces.idGeneratorable;
 
-public class Map extends Item implements Updateable, CheckOutable, CheckInable, Removeable, idGenerator {
+public class Map extends Item implements idGeneratorable {
 
 	private static int refMapID = 333;
 	private static int indiMapID = 100;
-	int iD;
-	String Location;
+	String location;
 	int year;
 
 	public Map(String location, int year) {
-		super();
-		this.iD = idGen();
-		this.Location = location;
+		setiD(idGen());
+		this.location = location;
 		this.year = year;
 	}
 
 	public String getLocation() {
-		return Location;
+		return location;
 	}
 
 	public void setLocation(String location) {
-		Location = location;
+		this.location = location;
 	}
 
 	public int getYear() {
@@ -37,13 +31,13 @@ public class Map extends Item implements Updateable, CheckOutable, CheckInable, 
 		this.year = year;
 	}
 
-	public int getID() {
-		return iD;
-	}
-
-	public void setID() {
-		this.iD = idGen();
-	}
+	// public int getID() {
+	// return iD;
+	// }
+	//
+	// public void setID() {
+	// this.iD = idGen();
+	// }
 
 	public static int getRefMapID() {
 		return refMapID;
@@ -54,16 +48,15 @@ public class Map extends Item implements Updateable, CheckOutable, CheckInable, 
 	}
 
 	@Override
-	public void update(int ID) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public int idGen() {
 		indiMapID++;
 		return Integer.parseInt(
 				Integer.toString(getItemRefID()) + Integer.toString(getRefMapID()) + Integer.toString(getIndiMapID()));
+	}
+
+	@Override
+	public String toString() {
+		return "Map [ID= " + getiD() + ", Location= " + location + ", Year= " + year + "]";
 	}
 
 }
