@@ -13,6 +13,12 @@ public class Book extends Item implements Updateable, CheckOutable, CheckInable,
 	int iD;
 	String title;
 
+	public Book(String title) {
+		super();
+		this.iD = idGen();
+		this.title = title;
+	}
+
 	public int getID() {
 		return iD;
 	}
@@ -29,22 +35,17 @@ public class Book extends Item implements Updateable, CheckOutable, CheckInable,
 		this.title = title;
 	}
 
-	public Book(int iD, String title) {
-		super();
-		this.title = title;
-	}
-
-	@Override
-	public void update(int ID) {
-
-	}
-
 	public static int getRefBookID() {
 		return refBookID;
 	}
 
 	public static int getIndiBookID() {
 		return indiBookID;
+	}
+
+	@Override
+	public void update(int ID) {
+
 	}
 
 	@Override

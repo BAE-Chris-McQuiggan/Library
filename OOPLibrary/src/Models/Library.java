@@ -10,15 +10,21 @@ public class Library implements Addable {
 
 	@Override
 	public void addItem(String title) {
-		int iD = this.getID();
-		Book newBook = new Book(iD, title);
+		Book newBook = new Book(title);
 		this.itemList.add(newBook);
 
 	}
 
 	@Override
-	public void addItem() {
-		// TODO Auto-generated method stub
+	public void addItem(String paperName, String datePublished) {
+		Newspaper newPaper = new Newspaper(datePublished, datePublished);
+		this.itemList.add(newPaper);
+	}
+
+	@Override
+	public void addItem(String itemType, String Location, int year) {
+		Map newMap = new Map(Location, year);
+		this.itemList.add(newMap);
 
 	}
 

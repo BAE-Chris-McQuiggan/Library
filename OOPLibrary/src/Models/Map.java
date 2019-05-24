@@ -1,19 +1,25 @@
 package Models;
 
-import Interfaces.Addable;
 import Interfaces.CheckInable;
 import Interfaces.CheckOutable;
 import Interfaces.Removeable;
 import Interfaces.Updateable;
 import Interfaces.idGenerator;
 
-public class Map extends Item implements Updateable, CheckOutable, CheckInable, Addable, Removeable, idGenerator {
+public class Map extends Item implements Updateable, CheckOutable, CheckInable, Removeable, idGenerator {
 
 	private static int refMapID = 333;
 	private static int indiMapID = 100;
 	int iD;
 	String Location;
 	int year;
+
+	public Map(String location, int year) {
+		super();
+		this.iD = idGen();
+		this.Location = location;
+		this.year = year;
+	}
 
 	public String getLocation() {
 		return Location;
@@ -29,12 +35,6 @@ public class Map extends Item implements Updateable, CheckOutable, CheckInable, 
 
 	public void setYear(int year) {
 		this.year = year;
-	}
-
-	@Override
-	public void update(int ID) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public int getID() {
@@ -54,7 +54,7 @@ public class Map extends Item implements Updateable, CheckOutable, CheckInable, 
 	}
 
 	@Override
-	public void addItem() {
+	public void update(int ID) {
 		// TODO Auto-generated method stub
 
 	}

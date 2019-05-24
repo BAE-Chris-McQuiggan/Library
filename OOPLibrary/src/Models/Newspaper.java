@@ -1,13 +1,12 @@
 package Models;
 
-import Interfaces.Addable;
 import Interfaces.CheckInable;
 import Interfaces.CheckOutable;
 import Interfaces.Removeable;
 import Interfaces.Updateable;
 import Interfaces.idGenerator;
 
-public class Newspaper extends Item implements Updateable, CheckOutable, CheckInable, Addable, Removeable, idGenerator {
+public class Newspaper extends Item implements Updateable, CheckOutable, CheckInable, Removeable, idGenerator {
 
 	private static int refPaperID = 444;
 	private static int indiPaperID = 100;
@@ -15,9 +14,9 @@ public class Newspaper extends Item implements Updateable, CheckOutable, CheckIn
 	String paperName;
 	String datePublished;
 
-	public Newspaper(int iD, String paperName, String datePublished) {
+	public Newspaper(String paperName, String datePublished) {
 		super();
-		this.iD = iD;
+		this.iD = idGen();
 		this.paperName = paperName;
 		this.datePublished = datePublished;
 	}
@@ -28,12 +27,6 @@ public class Newspaper extends Item implements Updateable, CheckOutable, CheckIn
 
 	public void setID() {
 		this.iD = idGen();
-	}
-
-	@Override
-	public void update(int ID) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public static int getRefPaperID() {
@@ -49,7 +42,7 @@ public class Newspaper extends Item implements Updateable, CheckOutable, CheckIn
 	}
 
 	@Override
-	public void addItem() {
+	public void update(int ID) {
 		// TODO Auto-generated method stub
 
 	}
